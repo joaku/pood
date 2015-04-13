@@ -8,6 +8,8 @@
 var Thing = require('../api/thing/thing.model');
 var Position = require('../api/position/position.model');
 var Apptype = require('../api/apptype/apptype.model');
+var Parttype = require('../api/parttype/parttype.model');
+var Part = require('../api/part/part.model');
 var Application = require('../api/application/application.model');
 var User = require('../api/user/user.model');
 
@@ -58,6 +60,11 @@ var id_doggy = "552b1c8001630a823e845b5d";
 var id_rep = "552b1c8001630a823e845b5a";
 var id_time = "552b1c8001630a823e845b5b";
 var id_iso = "552b1c8001630a823e845b5c";
+
+var id_foul = "552b1c8001630a823e845b5b";
+var id_shake = "552b1c8001630a823e845b5g";
+var id_cum = "552b1c8001630a823e845b5d";
+
 
 Position.find({}).remove(function() {
   Position.create({
@@ -118,4 +125,41 @@ Apptype.find({}).remove(function() {
     }
   );
 });
+
+Parttype.find({}).remove(function() {
+  Parttype.create({
+    _id: id_foul,
+    name: 'Foul play'
+  },{
+    _id: id_shake,
+    name: 'Shake baby'
+  },{
+    _id: id_cum,
+    name: 'After cum'
+  }, 
+   function() {
+      console.log('finished populating parttype');
+    }
+  );
+});
+
+Part.find({}).remove(function() {
+  Part.create({
+    parttype: id_foul,
+    applications: [id_doggy, id_doggy]
+  },{
+    parttype: id_shake,
+    applications: [id_doggy, id_doggy]
+  },{
+    parttype: id_cum,
+    applications: [id_doggy, id_doggy]
+  }, 
+   function() {
+      console.log('finished populating part');
+    }
+  );
+});
+
+
+
 
