@@ -6,6 +6,7 @@
 'use strict';
 
 var Thing = require('../api/thing/thing.model');
+var Position = require('../api/position/position.model');
 var User = require('../api/user/user.model');
 
 Thing.find({}).remove(function() {
@@ -44,6 +45,21 @@ User.find({}).remove(function() {
     password: 'admin'
   }, function() {
       console.log('finished populating users');
+    }
+  );
+});
+
+Position.find({}).remove(function() {
+  Position.create({
+    name: 'Doggy',
+    url_animation: 'http://ak-hdl.buzzfed.com/static/2014-06/14/15/enhanced/webdr05/anigif_enhanced-23403-1402773525-1.gif'
+  }, {
+    name: 'The Squat',
+    url_animation: 'http://ak-hdl.buzzfed.com/static/2014-06/14/15/enhanced/webdr05/anigif_enhanced-23403-1402773525-1.gif'
+  }, {
+    name: 'Paraguaya'
+  }, function() {
+      console.log('finished populating positions');
     }
   );
 });
