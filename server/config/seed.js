@@ -114,7 +114,7 @@ Apptype.find({}).remove(function() {
     name: 'Isometric'
   }, 
    function() {
-      console.log('finished populating application');
+      console.log('finished populating apptype');
     }
   );
 });
