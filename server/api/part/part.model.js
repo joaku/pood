@@ -10,9 +10,12 @@ var PartSchema = new Schema({
   	required: true
   },
   applications: [{
-  	type: Schema.Types.ObjectId,
-  	ref: 'Application',
-  	required: true
+  	order: Number,
+  	application: {
+  		type: Schema.Types.ObjectId,
+  		ref: 'Application',
+  		required: true
+  	}
   }]
 });
 

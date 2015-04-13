@@ -149,7 +149,14 @@ Part.find({}).remove(function() {
     applications: [id_doggy, id_doggy]
   },{
     parttype: id_shake,
-    applications: [id_doggy, id_doggy]
+    applications: [
+    {
+      order: 1,
+      application: id_doggy
+    },{
+      order: 2,
+      application: id_doggy
+    }]
   },{
     parttype: id_cum,
     applications: [id_doggy, id_doggy]
