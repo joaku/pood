@@ -12,6 +12,7 @@ var Parttype = require('../api/parttype/parttype.model');
 var Part = require('../api/part/part.model');
 var Application = require('../api/application/application.model');
 var User = require('../api/user/user.model');
+var Rutine = require('../api/rutine/rutine.model');
 
 Thing.find({}).remove(function() {
   Thing.create({
@@ -64,6 +65,10 @@ var id_iso = "552b1c8001630a823e845b5c";
 var id_foul = "552b1c8001630a823e845b5b";
 var id_shake = "552b1c8001630a823e845b5g";
 var id_cum = "552b1c8001630a823e845b5d";
+
+var id_part1 = "552b1c8001630a823e845b6d";
+var id_part2 = "552b1c8001630a823e845b7c";
+var id_part3 = "552b1c8001630a823e845b8a";
 
 
 Position.find({}).remove(function() {
@@ -167,6 +172,16 @@ Part.find({}).remove(function() {
   );
 });
 
+Rutine.find({}).remove(function() {
+  Rutine.create({
+    name: "Rutine 69",
+    parts: [id_part1, id_part2,id_part3]
+  }, 
+   function() {
+      console.log('finished populating rutines');
+    }
+  );
+});
 
 
 
