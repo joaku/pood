@@ -5,7 +5,9 @@ var Rutine = require('./rutine.model');
 
 // Get list of rutines
 exports.index = function(req, res) {
-  Rutine.find(function (err, rutines) {
+  Rutine.find()
+  .populate('parts')
+  .exec(function (err, rutines) {
     if(err) { return handleError(res, err); }
     return res.json(200, rutines);
   });
