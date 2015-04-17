@@ -150,9 +150,18 @@ Parttype.find({}).remove(function() {
 
 Part.find({}).remove(function() {
   Part.create({
+    _id: id_part1,
     parttype: id_foul,
-    applications: [id_doggy, id_doggy]
+    applications: [
+    {
+      order: 1,
+      application: id_doggy
+    },{
+      order: 2,
+      application: id_doggy
+    }]
   },{
+    _id: id_part2,
     parttype: id_shake,
     applications: [
     {
@@ -163,8 +172,16 @@ Part.find({}).remove(function() {
       application: id_doggy
     }]
   },{
+    _id: id_part3,
     parttype: id_cum,
-    applications: [id_doggy, id_doggy]
+    applications: [
+    {
+      order: 1,
+      application: id_doggy
+    },{
+      order: 2,
+      application: id_doggy
+    }]
   }, 
    function() {
       console.log('finished populating part');
